@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public float jump,speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +15,11 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x=Input.GetAxisRaw("Horizontal");
-        rb.velocity=new Vector2(x*7f,rb.velocity.y);
+        speed=Input.GetAxisRaw("Horizontal");
+        rb.velocity=new Vector2(speed*7f,rb.velocity.y);
         if(Input.GetButtonDown("Jump"))
         {
-            rb.velocity=new Vector2(rb.velocity.x,14);
+            rb.velocity=new Vector2(rb.velocity.x,jump);
         }
     }
 }
