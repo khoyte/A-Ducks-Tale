@@ -20,14 +20,8 @@ private Vector3 offset;            //Private variable to store the offset distan
 // LateUpdate is called after Update each frame
     void LateUpdate () 
     {
-        // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
-        if(followY)
-          {
-          transform.position = player.transform.position + offset; // we should follow the player Y movements, so we copy the entire position vector
-          }
-        else
-          {
-          transform.position = new Vector3(player.transform.position.x, 0.34f, player.transform.position.z) + offset; // we just copy the X and Z values
-          }
+        transform.position = new Vector3(player.transform.position.x, 0.34f, 0f) + offset; // we just copy the X and Z values
+          
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, 1.5f, 71.7f),0.34f,0f);
     }
 }
