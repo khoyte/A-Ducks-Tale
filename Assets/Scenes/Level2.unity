@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 648207863}
   - component: {fileID: 648207865}
   m_Layer: 0
-  m_Name: Deathzones
+  m_Name: Hazards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
