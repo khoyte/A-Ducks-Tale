@@ -5,6 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public CapsuleCollider2D coll;
+    [SerializeField] private LayerMask ground;
     public float jump,speed;
     Vector3 currentEulerAngles;
     Quaternion currentRotation;
@@ -30,9 +32,14 @@ public class Movement : MonoBehaviour
             currentRotation.eulerAngles = currentEulerAngles;
             transform.rotation = currentRotation;
         }
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity=new Vector2(rb.velocity.x,jump);
         }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, ground);
     }
 }
