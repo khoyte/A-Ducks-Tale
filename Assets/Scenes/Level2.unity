@@ -326,6 +326,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 281564956}
+    - target: {fileID: 8635529552712694372, guid: 3a1c1f69549f65f4f8cbd4e96799d3ee, type: 3}
+      propertyPath: farLeft
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635529552712694372, guid: 3a1c1f69549f65f4f8cbd4e96799d3ee, type: 3}
+      propertyPath: farRight
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a1c1f69549f65f4f8cbd4e96799d3ee, type: 3}
 --- !u!1 &575786680
@@ -24274,7 +24282,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0666667, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -28468,7 +28476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2838323051386751476, guid: f0dbc028041e48741864b6b3a45b2481, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.49
+      value: -7.04
       objectReference: {fileID: 0}
     - target: {fileID: 2838323051386751476, guid: f0dbc028041e48741864b6b3a45b2481, type: 3}
       propertyPath: m_LocalPosition.y
