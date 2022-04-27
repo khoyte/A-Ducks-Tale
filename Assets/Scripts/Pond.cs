@@ -12,6 +12,7 @@ public class Pond : MonoBehaviour
     public BoxCollider2D box;
     private int bobs=0;
     
+    public Animator anim;
 
     void Update()
     {
@@ -44,6 +45,7 @@ public class Pond : MonoBehaviour
     {
         if( col.CompareTag("Player"))
         {
+            anim.Play("Idle");
             start=player.transform.position;
             
 

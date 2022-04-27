@@ -3412,6 +3412,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &321446003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321446005}
+  - component: {fileID: 321446004}
+  m_Layer: 0
+  m_Name: PreventSink
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &321446004
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321446003}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &321446005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321446003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 79.51, y: -4.21, z: -2.8358603}
+  m_LocalScale: {x: 5.0497594, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &348869087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8635529552712694363, guid: 3a1c1f69549f65f4f8cbd4e96799d3ee, type: 3}
@@ -3420,6 +3477,11 @@ Transform:
 --- !u!1 &556996762 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 18520823921413494, guid: 083703d3d7526034eb82302ae553640b, type: 3}
+  m_PrefabInstance: {fileID: 18520824478406124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &556996763 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 281564957, guid: 083703d3d7526034eb82302ae553640b, type: 3}
   m_PrefabInstance: {fileID: 18520824478406124}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &659315593
@@ -13608,6 +13670,10 @@ PrefabInstance:
       value: Pond
       objectReference: {fileID: 0}
     - target: {fileID: 8098601960598363973, guid: 1f08d895548ba454ab16327059bf101b, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 556996763}
+    - target: {fileID: 8098601960598363973, guid: 1f08d895548ba454ab16327059bf101b, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 556996762}
@@ -13678,7 +13744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8635529552712694372, guid: 3a1c1f69549f65f4f8cbd4e96799d3ee, type: 3}
       propertyPath: farRight
-      value: 73
+      value: 76
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a1c1f69549f65f4f8cbd4e96799d3ee, type: 3}

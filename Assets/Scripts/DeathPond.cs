@@ -12,6 +12,12 @@ public class DeathPond : MonoBehaviour
     public BoxCollider2D box;
     private int bobs=0;
 
+    public GameObject EndScreen;
+    public Animator anim;
+    void Start()
+    {
+        EndScreen.SetActive(false);
+    }
     void Update()
     {
         if(begin)
@@ -40,7 +46,8 @@ public class DeathPond : MonoBehaviour
             
             if(bobs==7)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                EndScreen.SetActive(true);
             }
         }
     }
@@ -48,6 +55,7 @@ public class DeathPond : MonoBehaviour
     {
         if( col.CompareTag("Player"))
         {
+            anim.Play("SadDuck");
             start=player.transform.position;
             
             begin=true;
