@@ -5,8 +5,8 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 
 public GameObject player;    
-private Vector3 offset;            //Private variable to store the offset distance between the player and camera
-
+private Vector3 offset;  
+public float farLeft,farRight;
 // Use this for initialization
     void Start () 
     {
@@ -20,6 +20,6 @@ private Vector3 offset;            //Private variable to store the offset distan
     {
         transform.position = new Vector3(player.transform.position.x, 0.34f, 0f) + offset; // we just copy the X and Z values
           
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, 1.56f, 71f),0.34f,0f);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, farLeft, farRight),0.34f,0f);
     }
 }

@@ -7,11 +7,12 @@ public class Movement : MonoBehaviour
     public Rigidbody2D rb;
     public CapsuleCollider2D coll;
     [SerializeField] private LayerMask ground;
-    public float jump,speed;
+    public float jump,speed,k=0;
     Vector3 currentEulerAngles;
     Quaternion currentRotation;
     private Animator animator;
-    private int i = 0;
+    public int i = 0,jumps = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,13 +53,40 @@ public class Movement : MonoBehaviour
             i = 5;
             animator.Play("Jump");
             rb.velocity=new Vector2(rb.velocity.x,jump);
+            jumps--;
         }
-
+        if(k>0)
+        {
+            k-=Time.deltaTime;
+        }
+        
  
     }
 
     private bool IsGrounded()
     {
+        if(k>0)
+        {
+            if(jumps>0)
+            {
+                return true;
+            }
+            if(Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, ground))
+            {
+                jumps=2;
+            }
+        }
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, ground);
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("Enter");
+        if( col.name == "Strawberries" )
+        { 
+            k=5;
+            jumps=2;
+            Debug.Log("Strawberry");
+        }
     }
 }
