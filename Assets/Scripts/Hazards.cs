@@ -17,7 +17,7 @@ public class Hazards : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if( col.gameObject.tag == "Player" )
         { 

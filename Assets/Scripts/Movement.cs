@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     Quaternion currentRotation;
     private Animator animator;
     public int i = 0,jumps = 0;
+    public Pond pond;
 
 
     // Start is called before the first frame update
@@ -23,8 +24,35 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed=Input.GetAxisRaw("Horizontal");
-        rb.velocity=new Vector2(speed*7f,rb.velocity.y);
+        
+        if(!pond.begin)
+        {
+            speed=Input.GetAxisRaw("Horizontal");
+            rb.velocity=new Vector2(speed*7f,rb.velocity.y);
+            if(i == 0){
+                if(rb.velocity.x == 0){
+                    animator.Play("Idle");
+                }
+                if(rb.velocity.x != 0 && IsGrounded()){
+                    animator.Play("Walk");
+                }
+            }
+            else {
+                i--;
+            }
+            
+            if(Input.GetButtonDown("Jump") && IsGrounded())
+            {
+                i = 5;
+                animator.Play("Jump");
+                rb.velocity=new Vector2(rb.velocity.x,jump);
+                jumps--;
+            }
+            if(k>0)
+            {
+                k-=Time.deltaTime;
+            }  
+        }
         if(rb.velocity.x<0)
         {
             currentEulerAngles = new Vector3(0, 180, 0);
@@ -36,31 +64,6 @@ public class Movement : MonoBehaviour
             currentRotation.eulerAngles = currentEulerAngles;
             transform.rotation = currentRotation;
         }
-        if(i == 0){
-            if(rb.velocity.x == 0){
-                animator.Play("Idle");
-            }
-            if(rb.velocity.x != 0 && IsGrounded()){
-                animator.Play("Walk");
-            }
-        }
-        else {
-            i--;
-        }
-        
-        if(Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            i = 5;
-            animator.Play("Jump");
-            rb.velocity=new Vector2(rb.velocity.x,jump);
-            jumps--;
-        }
-        if(k>0)
-        {
-            k-=Time.deltaTime;
-        }
-        
- 
     }
 
     private bool IsGrounded()
@@ -79,14 +82,5 @@ public class Movement : MonoBehaviour
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, ground);
     }
 
-    void OnTriggerEnter(Collider col)
-    {
-        Debug.Log("Enter");
-        if( col.name == "Strawberries" )
-        { 
-            k=5;
-            jumps=2;
-            Debug.Log("Strawberry");
-        }
-    }
+    
 }
