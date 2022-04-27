@@ -15,6 +15,7 @@ public class Strawberries : MonoBehaviour
         { 
             player.k=5;
             player.jumps=2;
+            Destroy(this.gameObject);
             Debug.Log("Strawberry");
         }
     }
