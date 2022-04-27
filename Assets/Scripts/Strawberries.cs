@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Hazards : MonoBehaviour
+public class Strawberries : MonoBehaviour
 {
+    public Movement player;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +19,12 @@ public class Hazards : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if( col.gameObject.tag == "Player" )
+        Debug.Log("Enter");
+        if( col.CompareTag("Player"))
         { 
-            
-            int scene = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(scene, LoadSceneMode.Single);
+            player.k=5;
+            player.jumps=2;
+            Debug.Log("Strawberry");
         }
     }
 }
