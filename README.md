@@ -28,10 +28,10 @@ R - Restart Level
 
 ESC - Quit Game
 
-**Reach the end of the level and find water in order to progress through the game.**
+Reach the end of the level and find water in order to progress through the game.
 
-**Fruit gives the duck the ability to Double Jump, or "Fly", for a brief moment.**
+Fruit gives the duck the ability to Double Jump, or "Fly", for a brief moment.
 
-**Thorns, holes, and poisionous smoke are all *lethal* to the duck.**
+Thorns, holes, and poisionous smoke are all *lethal* to the duck
 
-There a total of 3 levels in the game.
+There are 3 levels in the game.
