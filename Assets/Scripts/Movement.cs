@@ -62,6 +62,10 @@ public class Movement : MonoBehaviour
             if(k>0)
             {
                 k-=Time.deltaTime;
+
+                if(k<=0){
+                    //play SE
+                }
             }  
         }
         if(rb.velocity.x<0)

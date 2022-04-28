@@ -28,7 +28,7 @@ public class Pond : MonoBehaviour
             }
             if(bobs==2)
             {
-                //input new state where he is content
+                anim.Play("Content");
             }
             if(percent>=1)
             {
@@ -45,7 +45,7 @@ public class Pond : MonoBehaviour
     {
         if( col.CompareTag("Player"))
         {
-            anim.Play("Idle");
+            //anim.Play("Content");
             start=player.transform.position;
             
 

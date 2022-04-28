@@ -36,7 +36,7 @@ public class DeathPond : MonoBehaviour
             }
             if(bobs==2)
             {
-                //input new state where he is sad.
+                anim.Play("SadDuck");
             }
             if(percent>=1)
             {
@@ -55,7 +55,7 @@ public class DeathPond : MonoBehaviour
     {
         if( col.CompareTag("Player"))
         {
-            anim.Play("SadDuck");
+            //anim.Play("SadDuck");
             start=player.transform.position;
             
             begin=true;
